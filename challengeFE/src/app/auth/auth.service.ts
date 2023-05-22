@@ -59,7 +59,6 @@ export class AuthService {
     localStorage.removeItem('token');
     localStorage.removeItem('cancionesFavoritas');
     this.loggedIn$.next(false);
-    location.reload();
     this.router.navigate(['/']);
     
   }

@@ -10,6 +10,7 @@ import { AuthService } from '../auth/auth.service';
 export class LoginComponent {
   registrationForm: FormGroup;
   submitted = false;
+  public loginError: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -44,6 +45,7 @@ export class LoginComponent {
       },
       error: (error) => {
         console.log(error);
+        this.loginError = true;
       }
     });
   }
