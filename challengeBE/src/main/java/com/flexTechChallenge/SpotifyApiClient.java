@@ -76,7 +76,7 @@ public class SpotifyApiClient {
 
         return responseBody;
     }
-    private String extractAccessToken(String tokenResponse) throws IOException {
+    public String extractAccessToken(String tokenResponse) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode tokenJson = mapper.readTree(tokenResponse);
 
@@ -84,7 +84,7 @@ public class SpotifyApiClient {
         return accessToken;
     }
 
-    private String getAccessToken() throws Exception {
+    public String getAccessToken() throws Exception {
 
         String encodedCredentials = Base64.getEncoder().encodeToString((clientId + ":" + clientSecret).getBytes(StandardCharsets.UTF_8));
 

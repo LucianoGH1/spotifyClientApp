@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CancionFavoritaService {
@@ -25,10 +26,17 @@ public class CancionFavoritaService {
     public void likeTrack(FavCancionDTO request) {
         CancionFavorita cancionFavorita = new CancionFavorita();
         cancionFavorita.setSpotifyId(request.getSpotifyId());
-        Usuario usuario = usuarioRepository.findByEmail(request.getUserEmail())
-                .orElseThrow(() -> new RuntimeException("User not found"));
-        cancionFavorita.setUsuario(usuario);
-        cancionFavoritaRepository.save(cancionFavorita);
+        Optional<Usuario> usuarioOptional = usuarioRepository.findByEmail(request.getUserEmail());
+
+        if(usuarioOptional.isPresent()) {
+            Usuario usuario = usuarioOptional.get();
+            cancionFavorita.setUsuario(usuario);
+            cancionFavoritaRepository.save(cancionFavorita);
+        } else {
+            throw new RuntimeException("Usuario no encontrado");
+        }
+
+
     }
 
     public void unlikeTrack(FavCancionDTO request) {
