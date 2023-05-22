@@ -1,0 +1,13 @@
+.navbar a {
+    margin-left: 2rem;
+}
+.navbar div {
+    margin-right: 2rem;
+}
+#navbarNav .btn{
+    margin-top: .3rem;
+    margin-left: 1rem;
+}
+.navbar img {
+    width: 1rem;
+}

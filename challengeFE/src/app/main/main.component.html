@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row justify-content-center" id="searchBar">
+      <div class="col-lg-6">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" [(ngModel)]="query" placeholder="Busca tus canciones favoritas">
+            <button class="btn btn-primary" (click)="search()"><fa-icon [icon]="faSearch"></fa-icon></button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="mostrarAlerta" class="alert alert-primary text-center w-50 m-auto" role="alert">
+      No se encontraron canciones con ese nombre
+    </div>
+    <img src="https://play-lh.googleusercontent.com/P2VMEenhpIsubG2oWbvuLGrs0GyyzLiDosGTg8bi8htRXg9Uf0eUtHiUjC28p1jgHzo" alt="spotifylogo" *ngIf="data.length === 0">
+    <div *ngIf="data.length > 0" class="cancionesContainer">
+      <app-track *ngFor="let track of data" [track]="track"></app-track>
+    </div>
+
+</div>

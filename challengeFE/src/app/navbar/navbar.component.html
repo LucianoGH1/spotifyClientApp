@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+  <a class="navbar-brand" href="#">Spotify API Challenge <img src="https://play-lh.googleusercontent.com/P2VMEenhpIsubG2oWbvuLGrs0GyyzLiDosGTg8bi8htRXg9Uf0eUtHiUjC28p1jgHzo" alt="spotifylogo"></a>
+
+  <div class="" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/favoritos"  *ngIf="(isLoggedIn$ | async)">Favoritos</a>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary btn-sm" (click)="openModalWithComponent('registrar')" *ngIf="!(isLoggedIn$ | async)">Creá tu cuenta</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-success btn-sm" (click)="openModalWithComponent('login')" *ngIf="!(isLoggedIn$ | async)">Ingresá</button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-danger btn-sm" (click)="logout()" *ngIf="isLoggedIn$ | async">Cerrar sesión</button>
+      </li>
+    </ul>
+  </div>
+</nav>

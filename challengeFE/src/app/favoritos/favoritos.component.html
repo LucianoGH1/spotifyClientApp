@@ -1,0 +1,7 @@
+<h1 class="text-center mt-3 mb-5">Favoritos</h1>
+<div *ngIf="data.length > 0" class="favoritosContainer">
+    <app-track *ngFor="let track of data" [track]="track"></app-track>
+</div>
+<div *ngIf="mostrarAlerta" class="alert alert-primary" role="alert">
+    Aun no tienes canciones favoritas!
+</div>

@@ -1,0 +1,18 @@
+<div class="card" style="width: 13rem;">
+    <img class="card-img-top" [src]="track.album.images[0].url" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ formatearTexto(track.name, 15) }}</h5>
+      <p class="card-text">{{ formatearTexto(track.artists[0].name, 20) }}</p>
+      <div class="trackIcons">
+        <audio #audioPlayer controls>
+          <source src="{{ track.preview_url }}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <fa-icon *ngIf="mostrarBotonFav()" [icon]="faHeart" (click)="toggleLike()" [ngClass]="{'iconoLiked': isLiked}"></fa-icon>
+        <div class="audio-controls">
+          <fa-icon [icon]="isPlaying ? faPause : faPlay" (click)="togglePlayback(audioPlayer)"></fa-icon>
+        </div>
+
+      </div>
+    </div>
+</div>

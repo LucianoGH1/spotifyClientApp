@@ -1,0 +1,19 @@
+.cancionesContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+#searchBar {
+    margin: 1rem 0;
+}
+
+img {
+    width: 20rem;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}

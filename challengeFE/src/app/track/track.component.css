@@ -1,0 +1,20 @@
+.track {
+    border: 1px solid black;
+    display: flex;
+}
+
+fa-icon {
+    cursor: pointer;
+}
+.trackIcons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+audio {
+    display: none;
+}
+.iconoLiked {
+    color: red;
+}
