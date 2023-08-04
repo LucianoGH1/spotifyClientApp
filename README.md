@@ -1,4 +1,4 @@
-# Flex Tech Challenge
+# Spotify Client App
 
 Esta es una aplicación web que permite a los usuarios buscar canciones utilizando la API de Spotify. También proporciona un sistema de autenticación de usuario utilizando JWT (JSON Web Token) para el registro de usuarios e inicio de sesión y tiene la capacidad de guardar canciones favoritas en una lista personal.
 
